@@ -11,4 +11,5 @@ button {
   color: #000000;
   border: none;
   border-radius: 5px;
+  margin: 0 2px; /* adjust the value to your desired spacing */
 }
