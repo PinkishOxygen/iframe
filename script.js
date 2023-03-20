@@ -4,8 +4,8 @@ function loadIframe(url) {
 
   const iframe = document.createElement("iframe");
   iframe.src = url;
-  iframe.width = "100%";
-  iframe.height = "100%";
+  iframe.width = "500%";
+  iframe.height = "500%";
 
   iframeContainer.appendChild(iframe);
 }
