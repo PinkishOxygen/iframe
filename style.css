@@ -4,12 +4,6 @@
   margin-top: 50px;
 }
 
-#image-container {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 button {
   font-size: 18px;
