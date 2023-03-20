@@ -5,11 +5,10 @@
 }
 
 button {
-  font-size: 24px;
-  padding: 12px 24px;
-  margin: 0 10px;
+  font-size: 18px;
+  padding: 10px;
   background-color: #cccccc;
   color: #000000;
-  font-weight: bold;
+  border: none;
   border-radius: 5px;
 }
