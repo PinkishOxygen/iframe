@@ -9,3 +9,5 @@ function loadIframe(url) {
 
   iframeContainer.appendChild(iframe);
 }
+
+localStorage.setItem("sLink", sLink);
