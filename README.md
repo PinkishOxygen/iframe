@@ -1,6 +1,6 @@
-# iframe
+# Framed
 
-A webpage that contains multiple "everyday" websites
+A webpage
 
 # credits
 me
