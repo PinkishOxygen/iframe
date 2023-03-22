@@ -180,11 +180,13 @@ input:checked + .slider:before {
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
   var button = document.querySelector('.openbtn');
-  button.style.left = '250px';
+  button.style.left = '150px';
 }
 
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
+  var button = document.querySelector('.openbtn');
+  button.style.right = '150px';
 }
  
   
