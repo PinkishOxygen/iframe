@@ -42,7 +42,7 @@ After opening the website, you can use the following features:
 
 ## Credits
 
-This website was created by PinkishOxygen.
+This website was created by [PinkishOxygen](https://github.com/PinkishOxygen).
 
 ## License
 
