@@ -161,11 +161,15 @@ input:checked + .slider:before {
       Search
     </button>
         </form>
+    
   </div>
   
   <button class="openbtn" onclick="openNav()">&#9776;</button>
+ 
+  
 
 <div id="mySidebar" class="sidebar">
+    
   
  <!-- Insert content for the sidebar here -->
 </div>
@@ -175,19 +179,14 @@ input:checked + .slider:before {
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
+  var button = document.querySelector('.openbtn');
+  button.style.left = '250px';
 }
 
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
-  
-function openNav() {
-  document.getElementById("mySidebar").classList.add("active");
-}
-
-.sidebar.active + .openbtn {
-    left: 250px;
-    }
+ 
   
 </script>
 
