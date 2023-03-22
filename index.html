@@ -112,7 +112,6 @@ button {
 <script>
 function changeBackground() {
   var checkBox = document.querySelector("input[type=checkbox]");
-  if (checkBox.checked == true) {
     document.body.style.backgroundImage = "url('253B6CCC-3E8A-40F1-AE73-3C1A4611636D.jpeg')";
     document.querySelectorAll("#buttons-container button, #sidebar, #search-container button").forEach(function(elem) {
       elem.style.backgroundColor = "#908d9e";
@@ -253,8 +252,12 @@ localStorage.setItem("sLink", sLink);
   sidebar.style.right = isOpen ? "-300px" : "0px";
   menuBtn.innerHTML = isOpen ? "&#9776;" : "&#x2715;";
 
-  if (!document.querySelector("input[type=checkbox]").checked) {
-    sidebar.style.backgroundColor = isOpen ? "#bfbfbf" : "#908d9e";
+    if (checkBox.checked == true) {
+      sidebar.style.backgroundColor = "#908d9e";
+    }
+    else {
+      sidebar.style.backgroundColor = "#bfbfbf";
+    }
   }
 }
   </script>
