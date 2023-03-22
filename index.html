@@ -182,13 +182,14 @@ function openNav() {
   sidebar.style.width = "250px";
   var button = document.querySelector('.openbtn');
   button.style.left = sidebar.offsetWidth + 'px';
+  document.getElementById("mySidebar").classList.add('sidebar-open');
 }
 
 
 function closeNav() {
   document.getElementById("mySidebar").classList.remove('sidebar-open');
   var button = document.querySelector('.openbtn');
-  button.style.left = '0';
+  button.style.left = '20px';
 }
  
   
@@ -235,7 +236,7 @@ function closeNav() {
   z-index: 2;
   top: 20px;
   right: -50px;
-  transition: 0.5s;
+  transition: 0.5s ease-out;
 }
 
 .sidebar-open .closebtn {
