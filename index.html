@@ -186,7 +186,9 @@ function openNav() {
 
 
 function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("mySidebar").classList.remove('sidebar-open');
+  var button = document.querySelector('.openbtn');
+  button.style.left = '0';
 }
  
   
@@ -223,14 +225,23 @@ function closeNav() {
 
 /* Style for the close button */
 .closebtn {
+  font-size: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #0c0d0c;
+  border: none;
+  outline: none;
   position: fixed;
-  top: 20;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
   z-index: 2;
-  
+  top: 20px;
+  right: -50px;
+  transition: 0.5s;
 }
+
+.sidebar-open .closebtn {
+  right: calc(250px - 50px); /* 250px is the width of the sidebar and 50px is the width of the close button */
+}
+
   
 
 </style>
