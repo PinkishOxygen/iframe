@@ -112,6 +112,7 @@ button {
 <script>
 function changeBackground() {
   var checkBox = document.querySelector("input[type=checkbox]");
+  if (checkBox.checked == true) {
     document.body.style.backgroundImage = "url('253B6CCC-3E8A-40F1-AE73-3C1A4611636D.jpeg')";
     document.querySelectorAll("#buttons-container button, #sidebar, #search-container button").forEach(function(elem) {
       elem.style.backgroundColor = "#908d9e";
@@ -121,7 +122,6 @@ function changeBackground() {
     revertColors();
   }
 }
-
 function revertColors() {
   document.querySelectorAll("#buttons-container button, #sidebar, #search-container button").forEach(function(elem) {
     elem.style.backgroundColor = elem.id == "menu-btn" ? "transparent" : "#bfbfbf";
