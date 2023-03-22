@@ -114,9 +114,19 @@ function changeBackground() {
   var checkBox = document.querySelector("input[type=checkbox]");
   if (checkBox.checked == true) {
     document.body.style.backgroundImage = "url('253B6CCC-3E8A-40F1-AE73-3C1A4611636D.jpeg')";
+    document.querySelectorAll("#buttons-container button, #sidebar").forEach(function(elem) {
+      elem.style.backgroundColor = "#908d9e";
+    });
   } else {
     document.body.style.backgroundImage = "url('5E4F2962-8125-477E-965F-6FD590C2129E.jpeg')";
+    revertColors();
   }
+}
+
+function revertColors() {
+  document.querySelectorAll("#buttons-container button, #sidebar").forEach(function(elem) {
+    elem.style.backgroundColor = elem.id == "menu-btn" ? "transparent" : "#bfbfbf";
+  });
 }
 </script>
 
@@ -235,14 +245,18 @@ localStorage.setItem("sLink", sLink);
   <script>
 
     // Add the toggleSidebar function
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      const menuBtn = document.getElementById("menu-btn");
-      const isOpen = sidebar.style.right === "0px";
+   function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  const menuBtn = document.getElementById("menu-btn");
+  const isOpen = sidebar.style.right === "0px";
 
-      sidebar.style.right = isOpen ? "-300px" : "0px";
-      menuBtn.innerHTML = isOpen ? "&#9776;" : "&#x2715;";
-    }
+  sidebar.style.right = isOpen ? "-300px" : "0px";
+  menuBtn.innerHTML = isOpen ? "&#9776;" : "&#x2715;";
+
+  if (!document.querySelector("input[type=checkbox]").checked) {
+    sidebar.style.backgroundColor = isOpen ? "#bfbfbf" : "#908d9e";
+  }
+}
   </script>
 </body>
 </html>
