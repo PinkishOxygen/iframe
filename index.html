@@ -180,7 +180,7 @@ input:checked + .slider:before {
 function openNav() {
   var sidebar = document.getElementById("mySidebar");
   sidebar.style.width = "250px";
-  var button = document.querySelector('.openbtn');
+  var button = document.querySelector('.closebtn');
   button.style.left = sidebar.offsetWidth + 'px';
   document.getElementById("mySidebar").classList.add('sidebar-open');
 }
@@ -188,7 +188,7 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("mySidebar").classList.remove('sidebar-open');
-  var button = document.querySelector('.openbtn');
+  var button = document.querySelector('.closebtn');
   button.style.left = '20px';
 }
  
