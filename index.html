@@ -166,10 +166,12 @@ input:checked + .slider:before {
   <button class="openbtn" onclick="openNav()">&#9776;</button>
 
 <div id="mySidebar" class="sidebar">
-  <button class="closebtn" onclick="closeNav()">&times;</button>
-
-  <!-- Insert content for the sidebar here -->
+  
+}
+ <!-- Insert content for the sidebar here -->
 </div>
+  
+  <button class="closebtn" onclick="closeNav()">&times;</button>
 
 <script>
 function openNav() {
@@ -180,7 +182,11 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
   
-  .sidebar.active + .openbtn {
+function openNav() {
+  document.getElementById("mySidebar").classList.add("active");
+}
+
+.sidebar.active + .openbtn {
     left: 250px;
     }
   
