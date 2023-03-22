@@ -178,10 +178,12 @@ input:checked + .slider:before {
 
 <script>
 function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
+  var sidebar = document.getElementById("mySidebar");
+  sidebar.style.width = "250px";
   var button = document.querySelector('.openbtn');
-  button.style.left = '125px';
+  button.style.left = sidebar.offsetWidth + 'px';
 }
+
 
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
