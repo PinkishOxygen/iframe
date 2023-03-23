@@ -6,12 +6,76 @@
   </head>
   <body>
     <h1>About This Project</h1>
-    <p>As a 15 year old programmer, I was eager to learn more about web development and create my own projects. However, I found myself struggling with many of the concepts and techniques involved in building websites.</p>
-    <p>That's when I discovered ChatGpt, a powerful language model that helped me overcome many of my programming challenges. With its advanced natural language processing capabilities, ChatGpt was able to provide me with clear and concise explanations of complex programming concepts, and even helped me to debug my code when I ran into errors.</p>
-    <p>With ChatGpt's help, I was able to build this website using HTML, CSS, and JavaScript. I used HTML to structure the content of the site, CSS to style the various elements and create a visually appealing design, and JavaScript to add interactivity and dynamic features to the site.</p>
-    <p>Overall, this project was a great learning experience for me as a young programmer, and I couldn't have done it without the help of ChatGpt.</p>
-    <div>&copy; 2023 <a href="https://github.com/PinkishOxygen">PinkishOxygen</a>
-    </div>
-    <img src="https://i.gifer.com/XwI7.gif" alt="Animated GIF">
+      <p>As a 15 year old programmer, I was eager to learn more about web development and create my own projects. However, I found myself struggling with many of the concepts and techniques involved in building websites.</p>
+      <p>That's when I discovered ChatGpt, a powerful language model that helped me overcome many of my programming challenges. With its advanced natural language processing capabilities, ChatGpt was able to provide me with clear and concise explanations of complex programming concepts, and even helped me to debug my code when I ran into errors.</p>
+      <p>With ChatGpt's help, I was able to build this website using HTML, CSS, and JavaScript. I used HTML to structure the content of the site, CSS to style the various elements and create a visually appealing design, and JavaScript to add interactivity and dynamic features to the site.</p>
+      <p>Overall, this project was a great learning experience for me as a young programmer, and I couldn't have done it without the help of ChatGpt.</p>
+      <div>&copy; 2023 <a href="https://github.com/PinkishOxygen">PinkishOxygen</a>
+      </div>
+      <img src="https://i.gifer.com/XwI7.gif" alt="Animated GIF">    
+    <style> 
+      
+      #buttons-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 300px;
+      }
+
+      .moveable-button {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        font-size: 18px;
+        padding: 10px;
+        background-color: #cccccc;
+        color: #000000;
+        border: none;
+        border-radius: 5px;
+      }
+      
+    </style>
+     <button onclick="window.location.href='index.html';" class="moveable-button">Back to main page</button>
+    <script>
+      let isDragging = false;
+      let currentX;
+      let currentY;
+      let initialX;
+      let initialY;
+      let xOffset = 0;
+      let yOffset = 0;
+      const button = document.querySelector('.moveable-button');
+      button.addEventListener("touchstart", dragStart, false);
+      button.addEventListener("touchend", dragEnd, false);
+      button.addEventListener("touchmove", drag, false);
+
+      function dragStart(e) {
+        initialX = e.touches[0].clientX - xOffset;
+        initialY = e.touches[0].clientY - yOffset;
+        if (e.target === button) {
+          isDragging = true;
+        }
+      }
+
+      function dragEnd(e) {
+        initialX = currentX;
+        initialY = currentY;
+        isDragging = false;
+      }
+
+      function drag(e) {
+        if (isDragging) {
+          e.preventDefault();
+          currentX = e.touches[0].clientX - initialX;
+          currentY = e.touches[0].clientY - initialY;
+          xOffset = currentX;
+          yOffset = currentY;
+          setTranslate(currentX, currentY, button);
+        }
+      }
+
+      function setTranslate(xPos, yPos, el) {
+        el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+      }
+    </script>
   </body>
 </html>
