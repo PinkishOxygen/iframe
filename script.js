@@ -41,6 +41,7 @@ if (sLink) {
 // Add the toggleSidebar function
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
+  const checkBox = document.querySelector("input[type=checkbox]");
   const menuBtn = document.getElementById("menu-btn");
   const isOpen = sidebar.style.right === "0px";
   sidebar.style.right = isOpen ? "-300px" : "0px";
