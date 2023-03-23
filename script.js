@@ -1,3 +1,5 @@
+var sLink;
+
 function changeBackground() {
         var checkBox = document.querySelector("input[type=checkbox]");
         if (checkBox.checked == true) {
