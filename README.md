@@ -1,5 +1,5 @@
 
-<img src="image.png" alt="Framed Logo" width="200" height="200">
+<img src="image.png" alt="Framed Logo" width="89" height="50">
 
 # Framed
 
