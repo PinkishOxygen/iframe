@@ -1,283 +1,252 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="shortcut icon" sizes="32x32" type="image/jpeg" href="AD9B3A6A-C54D-475F-B62A-23E87BA145D6.jpeg">
-  <link rel="icon" type="image/jpeg" sizes="32x32" href="AD9B3A6A-C54D-475F-B62A-23E87BA145D6.jpeg">
-  <link rel="apple-touch-icon" sizes="180x180" type="image/jpeg" href="AD9B3A6A-C54D-475F-B62A-23E87BA145D6.jpeg">
+  <head>
+    <link rel="shortcut icon" sizes="32x32" type="image/jpeg" href="AD9B3A6A-C54D-475F-B62A-23E87BA145D6.jpeg">
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="AD9B3A6A-C54D-475F-B62A-23E87BA145D6.jpeg">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/jpeg" href="AD9B3A6A-C54D-475F-B62A-23E87BA145D6.jpeg">
+    <meta charset="UTF-8">
+    <title>Google</title>
+    <style>
+      body {
+        background-image: url("5E4F2962-8125-477E-965F-6FD590C2129E.jpeg");
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
 
-  <meta charset="UTF-8">
-  <title>Google</title>
-  <style>
-    body { 
-      background-image: url("5E4F2962-8125-477E-965F-6FD590C2129E.jpeg");
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+      /* Your existing styles */
+      #image-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
 
-    /* Your existing styles */
-    
-    
-    #image-container {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    
-    #buttons-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 300px;
- }
+      #buttons-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 300px;
+      }
 
- #search-container {
-      margin-top: 50px;
-      text-align: center;
-    }
-    
-    form {
-      display: inline-block;
-    }
-    
-    input[type=text] {
-      padding: 10px;
-      border: ;
-      border-radius: 5px;
-      margin-right: 10px;
-    }
-    
-    button[type=submit] {
-      padding: 10px;
-      background-color: #cccccc;
-      color: #000000;
-      border: ;
-      border-radius: 10px;
-    }
+      #search-container {
+        margin-top: 50px;
+        text-align: center;
+      }
 
+      form {
+        display: inline-block;
+      }
 
-button {
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px;
-  background-color: #cccccc;
-  color: #000000;
-  border: ;
-  border-radius: 10px;
-  margin: 0 20px; /* adjust the value to your desired spacing */
-}
+      input[type=text] {
+        padding: 10px;
+        border: ;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
 
+      button[type=submit] {
+        padding: 10px;
+        background-color: #cccccc;
+        color: #000000;
+        border: ;
+        border-radius: 10px;
+      }
 
+      button {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        background-color: #cccccc;
+        color: #000000;
+        border: ;
+        border-radius: 10px;
+        margin: 0 20px;
+        /* adjust the value to your desired spacing */
+      }
 
-    /* New styles for the menu button and sidebar */
-    #menu-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      font-size: 30px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      z-index: 1000;
-    }
+      /* New styles for the menu button and sidebar */
+      #menu-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+      }
 
-    #sidebar {
-      position: absolute;
-      top: 0;
-      right: -300px;
-      width: 300px;
-      height: 100%;
-      background-color: #bfbfbf;
-      padding: 20px;
-      box-sizing: border-box;
-      transition: right 0.3s;
-      z-index: 999;
-    }
+      #sidebar {
+        position: absolute;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: #bfbfbf;
+        padding: 20px;
+        box-sizing: border-box;
+        transition: right 0.3s;
+        z-index: 999;
+      }
 
-    #sidebar h2 {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    
-     #copyright {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 14px;
-      color: #00000;
-    }
+      #sidebar h2 {
+        font-size: 24px;
+        font-weight: bold;
+      }
 
+      #copyright {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        color: #00000;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your existing HTML -->
+    <div id="switch-container">
+      <label class="switch">
+        <input type="checkbox" onclick="changeBackground()">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <script>
+      function changeBackground() {
+        var checkBox = document.querySelector("input[type=checkbox]");
+        if (checkBox.checked == true) {
+          document.body.style.backgroundImage = "url('253B6CCC-3E8A-40F1-AE73-3C1A4611636D.jpeg')";
+          document.querySelectorAll("#buttons-container button, #sidebar, #search-container button").forEach(function(elem) {
+            elem.style.backgroundColor = "#908d9e";
+          });
+        } else {
+          document.body.style.backgroundImage = "url('5E4F2962-8125-477E-965F-6FD590C2129E.jpeg')";
+          revertColors();
+        }
+      }
 
-  </style>
-</head>
-<body>
-  <!-- Your existing HTML -->
+      function revertColors() {
+        document.querySelectorAll("#buttons-container button, #sidebar, #search-container button").forEach(function(elem) {
+          elem.style.backgroundColor = elem.id == "menu-btn" ? "transparent" : "#bfbfbf";
+        });
+      }
+    </script>
+    <style>
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
 
-  <div id="switch-container">
-  <label class="switch">
-    <input type="checkbox" onclick="changeBackground()">
-    <span class="slider round"></span>
-  </label>
-</div>
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
 
-<script>
-function changeBackground() {
-  var checkBox = document.querySelector("input[type=checkbox]");
-  if (checkBox.checked == true) {
-    document.body.style.backgroundImage = "url('253B6CCC-3E8A-40F1-AE73-3C1A4611636D.jpeg')";
-    document.querySelectorAll("#buttons-container button, #sidebar, #search-container button").forEach(function(elem) {
-      elem.style.backgroundColor = "#908d9e";
-    });
-  } else {
-    document.body.style.backgroundImage = "url('5E4F2962-8125-477E-965F-6FD590C2129E.jpeg')";
-    revertColors();
-  }
-}
-function revertColors() {
-  document.querySelectorAll("#buttons-container button, #sidebar, #search-container button").forEach(function(elem) {
-    elem.style.backgroundColor = elem.id == "menu-btn" ? "transparent" : "#bfbfbf";
-  });
-}
-</script>
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
 
-<style>
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
 
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+      input:checked+.slider {
+        background-color: #2196F3;
+      }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+      input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+      input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
 
-input:checked + .slider {
-  background-color: #2196F3;
-}
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-</style>
-  
-  
-  <div id="buttons-container">
-    <button onclick="window.location.href='chatgpt.html';">ChatGPT</button>
-    <button onclick="window.location.href='ugoogle.html';">uGoogle</button>
-  </div>
-
-  <div id="search-container">
-    <form>
-      <input type="text" id="search" name="search" placeholder="Enter a link...">
-      <button type="submit" onclick="event.preventDefault(); 
+      .slider.round:before {
+        border-radius: 50%;
+      }
+    </style>
+    <div id="buttons-container">
+      <button onclick="window.location.href='chatgpt.html';">ChatGPT</button>
+      <button onclick="window.location.href='ugoogle.html';">uGoogle</button>
+    </div>
+    <div id="search-container">
+      <form>
+        <input type="text" id="search" name="search" placeholder="Enter a link...">
+        <button type="submit" onclick="event.preventDefault(); 
       sLink = document.getElementById('search').value;
       localStorage.setItem('sLink', sLink);
-      window.location.href='search.html';">
-      Search
-    </button>
-        </form>
-    
-  </div>
-
-  <div id="image-container">
-    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c0840e59-db43-4681-ae7b-31a04dc4bc55/d7eqdvw-4e97ac92-e4b9-4498-9655-e4d612eb478b.png/v1/fill/w_1600,h_900,strp/random_logo_by_criticl_d7eqdvw-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTAwIiwicGF0aCI6IlwvZlwvYzA4NDBlNTktZGI0My00NjgxLWFlN2ItMzFhMDRkYzRiYzU1XC9kN2VxZHZ3LTRlOTdhYzkyLWU0YjktNDQ5OC05NjU1LWU0ZDYxMmViNDc4Yi5wbmciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.X991O1jF5lTNZbbEoHEfoo6nlHEihBMHMIm5-uBCXcU" width="400" height="250">
-  </div>
-
-  <script>
-
-    function loadIframe(url) {
-  const iframeContainer = document.getElementById("iframe-container");
-  iframeContainer.innerHTML = "";
-
-  const iframe = document.createElement("iframe");
-  iframe.src = url;
-  iframe.style.width = "100%";
-  iframe.style.height = (window.innerHeight - 50) + "px";
-
-  iframeContainer.appendChild(iframe);
-}
-
-localStorage.setItem("sLink", sLink);
-    
+      window.location.href='search.html';"> Search </button>
+      </form>
+    </div>
+    <div id="image-container">
+      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c0840e59-db43-4681-ae7b-31a04dc4bc55/d7eqdvw-4e97ac92-e4b9-4498-9655-e4d612eb478b.png/v1/fill/w_1600,h_900,strp/random_logo_by_criticl_d7eqdvw-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTAwIiwicGF0aCI6IlwvZlwvYzA4NDBlNTktZGI0My00NjgxLWFlN2ItMzFhMDRkYzRiYzU1XC9kN2VxZHZ3LTRlOTdhYzkyLWU0YjktNDQ5OC05NjU1LWU0ZDYxMmViNDc4Yi5wbmciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.X991O1jF5lTNZbbEoHEfoo6nlHEihBMHMIm5-uBCXcU" width="400" height="250">
+    </div>
+    <script>
+      function loadIframe(url) {
+        const iframeContainer = document.getElementById("iframe-container");
+        iframeContainer.innerHTML = "";
+        const iframe = document.createElement("iframe");
+        iframe.src = url;
+        iframe.style.width = "100%";
+        iframe.style.height = (window.innerHeight - 50) + "px";
+        iframeContainer.appendChild(iframe);
+      }
+      localStorage.setItem("sLink", sLink);
     </script>
-
-  <!-- Add the menu button and sidebar -->
-  <button id="menu-btn" onclick="toggleSidebar()">
-    <span>&#9776;</span>
-  </button>
-  
-<div id="sidebar">
-  <div>
-    <a href="hwtm.html">How was this made</a><br>
-    <small>(work in progress)</small>
-  </div>
-</div>
-
-
-  <script>
-
-    // Add the toggleSidebar function
-   function toggleSidebar() {
-  const sidebar = document.getElementById("sidebar");
-  const menuBtn = document.getElementById("menu-btn");
-  const isOpen = sidebar.style.right === "0px";
-
-  sidebar.style.right = isOpen ? "-300px" : "0px";
-  menuBtn.innerHTML = isOpen ? "&#9776;" : "&#x2715;";
-
-    if (checkBox.checked == true) {
-      sidebar.style.backgroundColor = "#908d9e";
-    }
-    else {
-      sidebar.style.backgroundColor = "#bfbfbf";
-    }
-}
-  </script>
-  <div id="copyright">
-  &copy; 2023 <a href="https://github.com/PinkishOxygen">PinkishOxygen</a>
-</div>
-
-</body>
+    <!-- Add the menu button and sidebar -->
+    <button id="menu-btn" onclick="toggleSidebar()">
+      <span>&#9776;</span>
+    </button>
+    <div id="sidebar">
+      <div>
+        <a href="hwtm.html">How was this made</a>
+        <br>
+        <small>(work in progress)</small>
+      </div>
+    </div>
+    <script>
+      // Add the toggleSidebar function
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const menuBtn = document.getElementById("menu-btn");
+        const isOpen = sidebar.style.right === "0px";
+        sidebar.style.right = isOpen ? "-300px" : "0px";
+        menuBtn.innerHTML = isOpen ? "&#9776;" : "&#x2715;";
+        if (checkBox.checked == true) {
+          sidebar.style.backgroundColor = "#908d9e";
+        } else {
+          sidebar.style.backgroundColor = "#bfbfbf";
+        }
+      }
+    </script>
+    <div id="copyright"> &copy; 2023 <a href="https://github.com/PinkishOxygen">PinkishOxygen</a>
+    </div>
+  </body>
 </html>
