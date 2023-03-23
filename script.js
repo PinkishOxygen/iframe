@@ -41,3 +41,47 @@ function changeBackground() {
           sidebar.style.backgroundColor = "#bfbfbf";
         }
       }
+
+ const sLink = localStorage.getItem('sLink');
+      const iframe = document.querySelector('iframe');
+      iframe.src = sLink;
+      let isDragging = false;
+      let currentX;
+      let currentY;
+      let initialX;
+      let initialY;
+      let xOffset = 0;
+      let yOffset = 0;
+      const button = document.querySelector('.moveable-button');
+      button.addEventListener("touchstart", dragStart, false);
+      button.addEventListener("touchend", dragEnd, false);
+      button.addEventListener("touchmove", drag, false);
+
+      function dragStart(e) {
+        initialX = e.touches[0].clientX - xOffset;
+        initialY = e.touches[0].clientY - yOffset;
+        if (e.target === button) {
+          isDragging = true;
+        }
+      }
+
+      function dragEnd(e) {
+        initialX = currentX;
+        initialY = currentY;
+        isDragging = false;
+      }
+
+      function drag(e) {
+        if (isDragging) {
+          e.preventDefault();
+          currentX = e.touches[0].clientX - initialX;
+          currentY = e.touches[0].clientY - initialY;
+          xOffset = currentX;
+          yOffset = currentY;
+          setTranslate(currentX, currentY, button);
+        }
+      }
+
+      function setTranslate(xPos, yPos, el) {
+        el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+      }
