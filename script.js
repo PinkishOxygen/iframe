@@ -19,16 +19,24 @@ function changeBackground() {
         });
       }
 
- function loadIframe(url) {
-        const iframeContainer = document.getElementById("iframe-container");
-        iframeContainer.innerHTML = "";
-        const iframe = document.createElement("iframe");
-        iframe.src = url;
-        iframe.style.width = "100%";
-        iframe.style.height = (window.innerHeight - 50) + "px";
-        iframeContainer.appendChild(iframe);
-      }
-      localStorage.setItem("sLink", sLink);
+// Add the loadIframe function
+function loadIframe(url) {
+    const iframe = document.querySelector('iframe');
+    iframe.src = url;
+}
+
+// Update the search button's onclick function to call the loadIframe function
+function search() {
+    sLink = document.getElementById('search').value;
+    localStorage.setItem('sLink', sLink);
+    loadIframe(sLink);
+}
+
+// Load the stored link if it exists
+sLink = localStorage.getItem('sLink');
+if (sLink) {
+    loadIframe(sLink);
+}
 
  // Add the toggleSidebar function
       function toggleSidebar() {
