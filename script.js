@@ -43,8 +43,8 @@ function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   const checkBox = document.querySelector("input[type=checkbox]");
   const menuBtn = document.getElementById("menu-btn");
-  const isOpen = sidebar.style.right === "0px";
-  sidebar.style.right = isOpen ? "-300px" : "0px";
+  const isOpen = sidebar.style.right === "0%";
+  sidebar.style.right = isOpen ? "-100%" : "0%";
   menuBtn.innerHTML = isOpen ? "&#9776;" : "&#x2715;";
   if (checkBox.checked == true) {
     sidebar.style.backgroundColor = "#908d9e";
