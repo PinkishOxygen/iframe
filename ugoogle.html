@@ -4,95 +4,12 @@
     <meta charset="UTF-8">
     <title>uGoogle</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <style>
-      body {
-        background-color: #080808;
-      }
-
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      #iframe-container {
-        width: 100%;
-        height: 100%;
-      }
-
-      iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      #buttons-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 300px;
-      }
-
-      .moveable-button {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        font-size: 18px;
-        padding: 10px;
-        background-color: #cccccc;
-        color: #000000;
-        border: none;
-        border-radius: 5px;
-      }
-    </style>
   </head>
   <body>
     <div id="iframe-container">
       <iframe src="https://canvas.lnstructure.cf"></iframe>
     </div>
     <button onclick="window.location.href='index.html';" class="moveable-button">Back to main page</button>
-    <script>
-      let isDragging = false;
-      let currentX;
-      let currentY;
-      let initialX;
-      let initialY;
-      let xOffset = 0;
-      let yOffset = 0;
-      const button = document.querySelector('.moveable-button');
-      button.addEventListener("touchstart", dragStart, false);
-      button.addEventListener("touchend", dragEnd, false);
-      button.addEventListener("touchmove", drag, false);
-
-      function dragStart(e) {
-        initialX = e.touches[0].clientX - xOffset;
-        initialY = e.touches[0].clientY - yOffset;
-        if (e.target === button) {
-          isDragging = true;
-        }
-      }
-
-      function dragEnd(e) {
-        initialX = currentX;
-        initialY = currentY;
-        isDragging = false;
-      }
-
-      function drag(e) {
-        if (isDragging) {
-          e.preventDefault();
-          currentX = e.touches[0].clientX - initialX;
-          currentY = e.touches[0].clientY - initialY;
-          xOffset = currentX;
-          yOffset = currentY;
-          setTranslate(currentX, currentY, button);
-        }
-      }
-
-      function setTranslate(xPos, yPos, el) {
-        el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
-      }
-    </script>
+   <script src="script.js"></script>
   </body>
 </html>
