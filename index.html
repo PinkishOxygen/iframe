@@ -23,7 +23,10 @@
     <div id="search-container">
       <form>
         <input type="text" id="search" name="search" placeholder="Enter a link...">
-        <button type="submit" onclick="event.preventDefault(); sLink = document.getElementById('search').value; localStorage.setItem('sLink', sLink); window.location.href='search.html';"> Search </button>
+        <button type="submit" onclick="event.preventDefault(); 
+      sLink = document.getElementById('search').value;
+      localStorage.setItem('sLink', sLink);
+      window.location.href='search.html';"> Search </button>
       </form>
     </div>
     <div id="image-container">
