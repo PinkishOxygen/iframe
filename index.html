@@ -81,7 +81,7 @@ button {
     }
 
     #sidebar {
-      position: fixed;
+      position: absolute;
       top: 0;
       right: -300px;
       width: 300px;
@@ -97,6 +97,17 @@ button {
       font-size: 24px;
       font-weight: bold;
     }
+    
+     #copyright {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      color: #00000;
+    }
+
+
   </style>
 </head>
 <body>
@@ -237,9 +248,13 @@ localStorage.setItem("sLink", sLink);
     <span>&#9776;</span>
   </button>
   
-  <div id="sidebar">
-    <h2>Work in Progress</h2>
+<div id="sidebar">
+  <div>
+    <a href="hwtm.html">How was this made</a><br>
+    <small>(work in progress)</small>
   </div>
+</div>
+
 
   <script>
 
@@ -260,5 +275,9 @@ localStorage.setItem("sLink", sLink);
     }
 }
   </script>
+  <div id="copyright">
+  &copy; 2023 <a href="https://github.com/PinkishOxygen">PinkishOxygen</a>
+</div>
+
 </body>
 </html>
