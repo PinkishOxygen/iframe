@@ -2,6 +2,7 @@
         background-image: url("5E4F2962-8125-477E-965F-6FD590C2129E.jpeg");
         margin: 0;
         font-family: Arial, sans-serif;
+        overflow-x: hidden;
       }
 
       /* Your existing styles */
