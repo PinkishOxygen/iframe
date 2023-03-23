@@ -6,6 +6,12 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+    <script>
+  const sLink = localStorage.getItem('sLink');
+  const iframe = document.querySelector('iframe');
+  iframe.src = sLink;
+  </script>
+    
     <div id="iframe-container">
       <iframe></iframe>
     </div>
